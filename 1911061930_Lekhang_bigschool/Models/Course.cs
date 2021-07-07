@@ -19,5 +19,5 @@ namespace _1911061930_Lekhang_bigschool.Models
         public Category Category { get; set; }
         [Required]
         public byte CategoryId { get; set; }
-    }//123234
+    }
 }
