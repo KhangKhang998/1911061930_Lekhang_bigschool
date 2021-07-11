@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace _1911061930_Lekhang_bigschool.Controllers
 {
+    [Authorize]
     public class AttendancesController : Controller
     {
         private ApplicationDbContext _dbContext;
