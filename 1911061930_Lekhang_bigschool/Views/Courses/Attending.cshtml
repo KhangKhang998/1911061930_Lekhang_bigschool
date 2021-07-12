@@ -1,8 +1,10 @@
-﻿@model IEnumerable<_1911061930_Lekhang_bigschool.Models.Course>
-@{ ViewBag.Title = "Home Page"; }
-
+﻿@model _1911061930_Lekhang_bigschool.ViewModels.CoursesViewModel
+@{ ViewBag.Title = "AttenDing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+<h2> AttenDing</h2>
 <ul class="course">
-    @foreach (var course in Model)
+    @foreach (var course in Model.UpcommingCourses)
     {
     <li>
         <div class="date">
