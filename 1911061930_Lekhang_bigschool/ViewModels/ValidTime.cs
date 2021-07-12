@@ -13,7 +13,7 @@ namespace _1911061930_Lekhang_bigschool.ViewModels
         {
             DateTime dateTime;
             var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "HH:nm",
+                "HH:mm",
                 CultureInfo.CurrentCulture,
                 DateTimeStyles.None,
                 out dateTime);

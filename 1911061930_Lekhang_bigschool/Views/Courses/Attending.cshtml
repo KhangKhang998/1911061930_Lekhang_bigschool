@@ -1,5 +1,5 @@
 ﻿@model _1911061930_Lekhang_bigschool.ViewModels.CoursesViewModel
-@{ ViewBag.Title = "AttenDing";
+@{ ViewBag.Title = "Attending";
     Layout = "~/Views/Shared/_Layout.cshtml";
     }
 <h2> AttenDing</h2>
@@ -18,7 +18,7 @@
         <div class="details">
             <span class="lecturer">
                 @course.Lecturer.Name
-                @if (Model.Showaction)
+                @if (Model.ShowAction)
                 {
                     <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
                 }

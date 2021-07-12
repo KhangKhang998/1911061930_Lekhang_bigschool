@@ -3,6 +3,7 @@ using _1911061930_Lekhang_bigschool.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -47,6 +48,26 @@ namespace _1911061930_Lekhang_bigschool.Controllers
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "Home");
 
+        }
+
+        [Authorize]
+        public ActionResult Attending()
+        {
+
+            var userId = User.Identity.GetUserId();
+
+            var courses = _dbContext.Attendances
+                .Where(a => a.AttendeeId == userId)
+                .Select(async => async.Course)
+                .Include(l => l.Lecturer)
+                .Include(l => l.Category)
+                .ToList();
+            var viewModel = new CoursesViewModel
+            {
+                UpcommingCourses = courses,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+            return View(viewModel);
         }
     }
 }
