@@ -25,5 +25,13 @@ namespace _1911061930_Lekhang_bigschool.Models
             Followees = new Collection<Following>();
 
         }
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+            return userIdentity;
+        }
     }
 }
+// Hôm qua làm tới trang 44 chạy dc bt , xong tới phân flowwing thì lỗi ntn, mày xóa khúc tao bôi đên đó

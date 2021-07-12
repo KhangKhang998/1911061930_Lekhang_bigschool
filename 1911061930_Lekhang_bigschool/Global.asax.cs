@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.Http;
+using _1911061930_Lekhang_bigschool.App_Start;
 
 namespace _1911061930_Lekhang_bigschool
 {

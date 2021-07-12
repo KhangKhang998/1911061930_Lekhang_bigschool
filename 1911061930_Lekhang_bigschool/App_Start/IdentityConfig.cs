@@ -107,3 +107,4 @@ namespace _1911061930_Lekhang_bigschool
         }
     }
 }
+//thiếu file gì ấy. Mé file gốc mà báo lỗi vl , chịu luôn , t làm bài từ bửa down trên git về

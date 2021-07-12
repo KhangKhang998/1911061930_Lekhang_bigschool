@@ -4,13 +4,13 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace _1911061930_Lekhang_bigschool.Controllers
 {
-    [Authorize]
-    public class AttendancesController : Controller
+    public class AttendancesController : ApiController
     {
         private ApplicationDbContext _dbContext;
         public AttendancesController()
@@ -21,8 +21,8 @@ namespace _1911061930_Lekhang_bigschool.Controllers
         public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
             var userId = User.Identity.GetUserId();
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && attendanceDto.courseId))
-                return BadRequest("The Attendance Already Exists!");     
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourserId == attendanceDto.CourseId))
+                return BadRequest("The Attendance Already Exists!");
             var attendance = new Attendance
             {
                 CourserId = attendanceDto.CourseId,
@@ -31,7 +31,7 @@ namespace _1911061930_Lekhang_bigschool.Controllers
             _dbContext.Attendances.Add(attendance);
             _dbContext.SaveChanges();
             return Ok();
-            
         }
     }
 }
+// Ủa bị gì v m ? T vừa ngớp ngụm nước xong

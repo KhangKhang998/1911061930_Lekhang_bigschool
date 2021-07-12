@@ -16,6 +16,7 @@
         <div class="details">
             <span class="lecturer">
                 @course.Lecturer.Name
+                <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
             </span>
             <span class="category">
                 @course.Category.Name
@@ -43,6 +44,16 @@
                     .fail(function () {
                         alert("Something Failed!");
                     })
+            });
+            $(".js-toggle-follow").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/following", { followeeId: button.attr("data-user-id") })
+                    .done(function () {
+                        button.text("!Following!");
+                    })
+                    .fail(function () {
+                        alert("Something Failed");
+                    });
             });
         });
     </script>
