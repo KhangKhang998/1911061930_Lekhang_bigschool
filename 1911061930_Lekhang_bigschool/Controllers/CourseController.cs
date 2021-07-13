@@ -92,7 +92,7 @@ namespace _1911061930_Lekhang_bigschool.Controllers
             {
                 Categories = _dbContext.Categories.ToList(),
                 Date = course.DateTime.ToString("dd/M/yyyy"),
-                Time = course.DateTime.ToString("HH:nm"),
+                Time = course.DateTime.ToString("HH:mm"),
                 Category = course.CategoryId,
                 Place = course.Place,
                 Heading ="Edit Course",
