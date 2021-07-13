@@ -71,7 +71,7 @@ namespace _1911061930_Lekhang_bigschool.Controllers
 
             var courses = _dbContext.Attendances
                 .Where(a => a.AttendeeId == userId)
-                .Select(async => async.Course)
+                .Select(a => a.Course)
                 .Include(l => l.Lecturer)
                 .Include(l => l.Category)
                 .ToList();
