@@ -17,7 +17,8 @@ namespace _1911061930_Lekhang_bigschool.ViewModels
                 CultureInfo.CurrentCulture,
                 DateTimeStyles.None,
                 out dateTime);
-            return (isValid && dateTime > DateTime.Now);
+            return isValid;
         }
     }
 }
+//return (isValid && dateTime > DateTime.Now);
