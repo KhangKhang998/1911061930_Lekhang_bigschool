@@ -15,7 +15,7 @@ namespace _1911061930_Lekhang_bigschool.Controllers
         private readonly ApplicationDbContext _dbContext;
         public CourseController()
         {
-            _dbContext = new ApplicationDbContext();
+            _dbContext = new ApplicationDbContext();//
         }
 
         [Authorize]
