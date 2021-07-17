@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using _1911061930_Lekhang_bigschool.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace _1911061930_Lekhang_bigschool.Controllers
 {
@@ -21,7 +22,9 @@ namespace _1911061930_Lekhang_bigschool.Controllers
             var upcomingCourses = _dbContext.Courses
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
-                .Where(c => c.DateTime > DateTime.Now);
+                .Where(c => c.DateTime > DateTime.Now && c.IsCanceled == false);
+            var userId = User.Identity.GetUserId();
+
             var viewModel = new CoursesViewModel
             {
                 UpcommingCourses = upcomingCourses,

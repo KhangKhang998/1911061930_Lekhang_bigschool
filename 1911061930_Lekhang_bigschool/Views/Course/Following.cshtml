@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNet.Identity
+@using _1911061930_Lekhang_bigschool.Models
+@model _1911061930_Lekhang_bigschool.ViewModels.CourseViewModel
+@{
+    ViewBag.Title = "Following";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Following</h2>
+
+<div class="row">
+    <ul class="course">
+        @foreach (var course in Model.UpcommingCourses)
+        {
+            <li>
+                <div class="date">
+                    <div class="month">
+                        @course.DateTime.ToString("MM")
+                    </div>
+                    <div class="day">
+                        @course.DateTime.ToString("dd")
+                    </div>
+                </div>
+                <div class="details">
+                    <span class="lecturer">
+                        @course.Lecturer.Name
+                    </span>
+                    <br />
+                    <span class="category mr-3">
+                        @course.Category.Name
+                    </span>
+
+                </div>
+            </li>
+        }
+    </ul>
+</div>

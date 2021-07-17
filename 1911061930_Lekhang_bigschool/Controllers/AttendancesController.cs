@@ -42,7 +42,7 @@ namespace _1911061930_Lekhang_bigschool.Controllers
 
             if (attendance == null)
                 return NotFound();
-            _dbContext.Attendances.Add(attendance);
+            _dbContext.Attendances.Remove(attendance);
             _dbContext.SaveChanges();
             return Ok(id);
         }

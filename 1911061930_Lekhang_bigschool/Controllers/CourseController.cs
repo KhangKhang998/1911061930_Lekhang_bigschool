@@ -56,7 +56,7 @@ namespace _1911061930_Lekhang_bigschool.Controllers
         {
             var userId = User.Identity.GetUserId();
             var courses = _dbContext.Courses
-                .Where(c => c.LecturerId == userId && c.DateTime > DateTime.Now)
+                .Where(c => c.LecturerId == userId && c.DateTime > DateTime.Now && c.IsCanceled == false)
                 .Include(l => l.Lecturer)
                 .Include(c => c.Category)
                 .ToList();
@@ -82,6 +82,30 @@ namespace _1911061930_Lekhang_bigschool.Controllers
             };
             return View(viewModel);
         }
+
+        [Authorize]
+        public ActionResult Following()
+        {
+            var userId = User.Identity.GetUserId();
+
+            var courses = _dbContext.Courses
+                .Where(a => a.LecturerId == _dbContext.Followings.FirstOrDefault(b => b.FolloweeId == a.LecturerId).FolloweeId &&
+                            _dbContext.Followings.FirstOrDefault(b => b.FollowerId == userId).FollowerId == userId
+                )
+                .Include(l => l.Lecturer)
+                .Include(l => l.Category)
+                .Where(a => a.IsCanceled == false)
+                .ToList();
+
+            var viewModel = new CourseViewModel
+            {
+                UpcommingCourses = courses,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+
+            return View(viewModel);
+        }
+
         [Authorize]
         public ActionResult Edit(int id)
         {

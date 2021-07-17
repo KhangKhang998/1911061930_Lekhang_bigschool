@@ -30,7 +30,6 @@ namespace _1911061930_Lekhang_bigschool.Models
                 .HasRequired(a => a.Course)
                 .WithMany()
                 .WillCascadeOnDelete(false);
-            base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<ApplicationUser>()
                 .HasMany(u => u.Followers)
@@ -44,4 +43,4 @@ namespace _1911061930_Lekhang_bigschool.Models
             base.OnModelCreating(modelBuilder);
         }// Trang 46 tạo Follow 
     }
-}//
+}

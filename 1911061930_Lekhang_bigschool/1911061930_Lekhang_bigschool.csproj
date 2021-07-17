@@ -243,7 +243,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\app\coursesControoler.js" />
     <Content Include="Scripts\bootbox.all.js" />
     <Content Include="Scripts\bootbox.all.min.js" />
     <Content Include="Scripts\bootbox.js" />
@@ -300,10 +299,10 @@
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\Attending.cshtml" />
     <Content Include="Views\Course\Mine.cshtml" />
+    <Content Include="Views\Course\Following.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Attendances\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -9,6 +9,9 @@ namespace _1911061930_Lekhang_bigschool.ViewModels
 {
     public class CourseViewModel
     {
+
+        public IEnumerable<Course> UpcommingCourses { get; set; }
+        public bool ShowAction { get; set; }
         public int Id { get; set; }
         [Required]
         public string Place { get; set; }
