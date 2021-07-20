@@ -12,7 +12,7 @@ namespace _1911061930_Lekhang_bigschool.Models
         public Course Course { get; set; }
         [Key]
         [Column(Order = 1)]
-        public int CourserId { get; set; }
+        public int CourseId { get; set; }
         public ApplicationUser Attendee { get; set; }
         [Key]
         [Column(Order = 2)]

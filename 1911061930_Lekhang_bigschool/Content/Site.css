@@ -60,3 +60,7 @@ textarea {
 .course >li:hover .action{
     display:block;
 }
+
+.course th{
+    text-align:center;
+}

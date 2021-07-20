@@ -1,4 +1,4 @@
-namespace _1911061930_Lekhang_bigschool.Migrations
+﻿namespace _1911061930_Lekhang_bigschool.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
@@ -7,9 +7,11 @@ namespace _1911061930_Lekhang_bigschool.Migrations
     {
         public override void Up()
         {
-            Sql("INSERT INTO CATEGORIES (ID , NAME) VALUES (1, 'Development') ");
-            Sql("INSERT INTO CATEGORIES (ID , NAME) VALUES (2, 'Bussiness') ");
-            Sql("INSERT INTO CATEGORIES (ID , NAME) VALUES (3, 'Marketing') ");
+            Sql("INSERT INTO CATEGORIES (ID , NAME) VALUES (1, 'Do an Java') ");
+            Sql("INSERT INTO CATEGORIES (ID , NAME) VALUES (2, 'Lap trinh web') ");
+            Sql("INSERT INTO CATEGORIES (ID , NAME) VALUES (3, 'Lap trinh C') ");
+            Sql("INSERT INTO CATEGORIES (ID , NAME) VALUES (4, 'Lap trinh java') ");
+            Sql("INSERT INTO CATEGORIES (ID , NAME) VALUES (5, 'Toan cao cap') ");
         }
         
         public override void Down()

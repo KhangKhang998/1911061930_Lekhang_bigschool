@@ -21,11 +21,11 @@ namespace _1911061930_Lekhang_bigschool.Controllers
         public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
             var userId = User.Identity.GetUserId();
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourserId == attendanceDto.CourseId))
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
                 return BadRequest("The Attendance Already Exists!");
             var attendance = new Attendance
             {
-                CourserId = attendanceDto.CourseId,
+                CourseId = attendanceDto.CourseId,
                 AttendeeId = userId
             };
             _dbContext.Attendances.Add(attendance);
@@ -38,7 +38,7 @@ namespace _1911061930_Lekhang_bigschool.Controllers
             var userId = User.Identity.GetUserId();
 
             var attendance = _dbContext.Attendances
-                .SingleOrDefault(a => a.AttendeeId == userId && a.CourserId == id);
+                .SingleOrDefault(a => a.AttendeeId == userId && a.CourseId == id);
 
             if (attendance == null)
                 return NotFound();

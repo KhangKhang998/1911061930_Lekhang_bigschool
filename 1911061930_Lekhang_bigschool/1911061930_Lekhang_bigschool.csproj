@@ -218,6 +218,10 @@
     <Compile Include="Migrations\202107121246160_AddIsCanceledColumnToCourse.Designer.cs">
       <DependentUpon>202107121246160_AddIsCanceledColumnToCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107200615460_ChangeColumnCoureIdOfAttendce.cs" />
+    <Compile Include="Migrations\202107200615460_ChangeColumnCoureIdOfAttendce.Designer.cs">
+      <DependentUpon>202107200615460_ChangeColumnCoureIdOfAttendce.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDBContext.cs" />
@@ -338,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107121246160_AddIsCanceledColumnToCourse.resx">
       <DependentUpon>202107121246160_AddIsCanceledColumnToCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107200615460_ChangeColumnCoureIdOfAttendce.resx">
+      <DependentUpon>202107200615460_ChangeColumnCoureIdOfAttendce.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
